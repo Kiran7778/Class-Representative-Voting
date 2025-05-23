@@ -1,0 +1,17 @@
+<div class="results-container">
+  <h3>📊 Voting Results:</h3>
+
+  <div *ngIf="sortedCandidates.length > 0; else noResults">
+    <div *ngFor="let candidate of sortedCandidates">
+      <p [ngClass]="{ 'top-voted': candidate.id === getTopCandidateId() }">
+        <span *ngIf="candidate.id === getTopCandidateId()">🥇</span>
+        <span *ngIf="candidate.id !== getTopCandidateId()">🗳️</span>
+        {{ candidate.name }}: {{ candidate.votes }} vote(s)
+      </p>
+    </div>
+  </div>
+
+  <ng-template #noResults>
+    <p>No votes recorded yet.</p>
+  </ng-template>
+</div>

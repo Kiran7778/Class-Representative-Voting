@@ -1,0 +1,26 @@
+<div [ngClass]="isRegistered ? 'registered-container' : 'default-container'">
+  <h2>Select Field</h2>
+  <select [(ngModel)]="selectedField">
+    <option *ngFor="let field of fields" [value]="field">{{ field }}</option>
+  </select>
+
+  <div *ngIf="selectedField">
+    <h2>Select Specialization</h2>
+    <select [(ngModel)]="selectedSpecialization">
+      <option *ngFor="let specialization of specializations" [value]="specialization">{{ specialization }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="selectedSpecialization">
+    <h2>Select Subjects (Choose exactly 5)</h2>
+    <div *ngFor="let subject of specializationSubjects">
+      <label>
+        <input type="checkbox" [value]="subject.id" (change)="toggleSubject(subject.id)" />
+        {{ subject.name }}
+      </label>
+    </div>
+  </div>
+
+  <button (click)="submitVote()" [disabled]="selectedSubjects.length !== 5">Submit Vote</button>
+  <p *ngIf="message">{{ message }}</p>
+</div>

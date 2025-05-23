@@ -1,0 +1,43 @@
+nav {
+  background-color: #4CAF50; /* Green background */
+  padding: 12px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center; /* Center nav links */
+  flex-wrap: wrap; /* Wrap on smaller screens */
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #45a049; /* Slightly darker green */
+  color: #e0f2f1; /* Light teal text on hover */
+}
+
+.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  background-color: #2e7d32; /* Darker green for active link */
+  color: #a5d6a7; /* Light green text for active */
+}
+
+/* Responsive: On small screens, stack the links vertically */
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+}

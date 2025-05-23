@@ -1,0 +1,29 @@
+<div class="login-box">
+  <h2>Login</h2>
+
+  <form (ngSubmit)="login()" #loginForm="ngForm">
+    <label for="email">Email:</label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      [(ngModel)]="email"
+      placeholder="Enter your email"
+      required
+    />
+
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="password"
+      placeholder="Enter your password"
+      required
+    />
+
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+
+  <p *ngIf="message">{{ message }}</p>
+</div>

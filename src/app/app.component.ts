@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'class-voting-frontend';
+title(title: any) {
+  throw new Error('Method not implemented.');
+}
+submitVote() {
+throw new Error('Method not implemented.');
+}
+selectedElective: any;
 }

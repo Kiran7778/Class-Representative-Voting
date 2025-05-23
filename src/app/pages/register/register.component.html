@@ -1,0 +1,24 @@
+<div class="form-container">
+  <h2>Student Registration</h2>
+
+  <form (ngSubmit)="register()">
+    <label>Name:</label>
+    <input [(ngModel)]="name" name="name" placeholder="Your full name" required />
+
+    <label>Roll Number:</label>
+    <input [(ngModel)]="rollNumber" name="rollNumber" placeholder="Your roll number" required />
+
+    <label>Email:</label>
+    <input [(ngModel)]="email" name="email" placeholder="Your email" required type="email" />
+
+    <label>Department:</label>
+    <input [(ngModel)]="department" name="department" placeholder="Your department" required />
+
+    <label>Password:</label>
+    <input [(ngModel)]="password" name="password" type="password" placeholder="Choose a password" required />
+
+    <button type="submit">Register</button>
+
+    <p *ngIf="message">{{ message }}</p>
+  </form>
+</div>
